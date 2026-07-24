@@ -47,6 +47,45 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      cursor: zoom-in;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1.75rem;
+      line-height: 1;
+      cursor: pointer;
     }
 
     .divider {
@@ -127,11 +166,16 @@
 </head>
 <body>
   <div class="banner">
-    <img src="images/photo3.jpg" alt="Group photo of retired teachers at a gathering">
-    <img src="images/photo1.jpg" alt="Retired teachers at a restaurant celebration">
-    <img src="images/photo2.jpg" alt="Retired teachers at the Neil Diamond Musical">
+    <img src="images/photo3.jpg" alt="Group photo of retired teachers at a gathering" onclick="openLightbox(this)">
+    <img src="images/photo1.jpg" alt="Retired teachers at a restaurant celebration" onclick="openLightbox(this)">
+    <img src="images/photo2.jpg" alt="Retired teachers at the Neil Diamond Musical" onclick="openLightbox(this)">
   </div>
   <div class="divider"></div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
   <div class="body-content">
     <h1>Active Retired York Catholic Teachers</h1>
     <p class="tagline">We are retired York OECTA members who like to stay connected and involved.</p>
@@ -160,5 +204,23 @@
       </a>
     </div>
   </div>
+
+  <script>
+    function openLightbox(imgEl) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = imgEl.src;
+      lightboxImg.alt = imgEl.alt;
+      lightbox.classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
