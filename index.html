@@ -9,10 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --maroon: #6b1f2e;
-      --gold: #c9a24b;
-      --cream: #fdf9f2;
-      --text: #3d2b2b;
+      --plum: #723480;
+      --olive: #808034;
+      --lavender: #dbd4ff;
+      --cream: #fffee3;
+      --text: #4a3552;
     }
 
     * {
@@ -25,7 +26,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #7a2436 0%, #4a1420 100%);
+      background: linear-gradient(135deg, var(--plum) 0%, var(--olive) 100%);
       font-family: 'Poppins', sans-serif;
       color: var(--text);
       padding: 2rem;
@@ -35,7 +36,7 @@
       background: var(--cream);
       border-radius: 24px;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-      max-width: 720px;
+      max-width: 960px;
       width: 100%;
       text-align: center;
       overflow: hidden;
@@ -46,6 +47,12 @@
       grid-template-columns: 1.3fr 1fr 1fr;
       gap: 4px;
       height: 200px;
+    }
+
+    @media (min-width: 700px) {
+      .banner {
+        height: 380px;
+      }
     }
 
     .banner img {
@@ -66,7 +73,7 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      color: var(--maroon);
+      color: var(--plum);
       font-size: clamp(1.8rem, 4.5vw, 2.75rem);
       margin: 0 0 1rem;
       letter-spacing: 0.5px;
@@ -74,10 +81,10 @@
 
     .tagline {
       font-size: clamp(1rem, 2vw, 1.15rem);
-      color: #6b5a5a;
+      color: var(--olive);
       margin: 0 0 2.5rem;
       line-height: 1.6;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     .social-links {
