@@ -67,6 +67,11 @@
       height: 100%;
     }
 
+    .divider {
+      height: 6px;
+      background: var(--lavender);
+    }
+
     .body-content {
       padding: 2.75rem 3rem 3.25rem;
     }
@@ -97,9 +102,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 72px;
-      height: 72px;
-      border-radius: 20px;
+      width: 92px;
+      height: 92px;
+      padding: 10px;
+      border-radius: 24px;
+      background: var(--lavender);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
@@ -122,8 +129,9 @@
         padding: 2rem 1.5rem 2.5rem;
       }
       .social-links a {
-        width: 60px;
-        height: 60px;
+        width: 76px;
+        height: 76px;
+        padding: 8px;
       }
       .social-links svg {
         width: 60px;
@@ -139,6 +147,7 @@
       <img src="images/photo1.jpg" alt="Retired teachers at a restaurant celebration">
       <img src="images/photo2.jpg" alt="Retired teachers at the Neil Diamond Musical">
     </div>
+    <div class="divider"></div>
     <div class="body-content">
       <h1>Active Retired York Catholic Teachers</h1>
       <p class="tagline">We are retired York OECTA members who like to stay connected and involved.</p>
