@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>July 2026 Newsletter — ARYCT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --plum: #723480;
+      --olive: #808034;
+      --lavender: #dbd4ff;
+      --cream: #fffee3;
+      --text: #4a3552;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--cream);
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+    }
+
+    .top-bar {
+      background: var(--lavender);
+      padding: 0.9rem 1.5rem;
+      text-align: center;
+    }
+
+    .top-bar a {
+      color: var(--plum);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 0.75rem;
+    }
+
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .newsletter {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .newsletter h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--plum);
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      text-align: center;
+      margin: 0 0 0.5rem;
+    }
+
+    .newsletter .subtitle {
+      text-align: center;
+      color: var(--olive);
+      font-weight: 600;
+      margin: 0 0 2rem;
+    }
+
+    .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--plum);
+      font-size: 1.4rem;
+      margin: 0 0 0.75rem;
+      border-left: 5px solid var(--olive);
+      padding-left: 0.75rem;
+    }
+
+    .newsletter section {
+      margin-bottom: 2.25rem;
+    }
+
+    .newsletter p {
+      line-height: 1.7;
+      margin: 0 0 1rem;
+    }
+
+    .newsletter img {
+      max-width: 100%;
+      border-radius: 10px;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .photo-single {
+      margin: 0 0 1rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 0 0 1rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .newsletter a {
+      color: var(--olive);
+      font-weight: 600;
+    }
+
+    .dates-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .dates-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--lavender);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .dates-list li:last-child {
+      border-bottom: none;
+    }
+
+    .dates-list .date {
+      font-weight: 700;
+      color: var(--plum);
+      white-space: nowrap;
+    }
+
+    .highlight-box {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .donation-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+
+    .donation-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.35rem 0;
+      border-bottom: 1px dashed var(--lavender);
+    }
+
+    .donation-list li:last-child {
+      border-bottom: none;
+      font-weight: 700;
+      color: var(--plum);
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--olive);
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      cursor: default;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1.75rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="../index.html#newsletters">&larr; Back to Home</a>
+    <a href="index.html">All Newsletters</a>
+  </div>
+
+  <div class="newsletter">
+    <h1>ARYCT Newsletter — July 2026</h1>
+    <p class="subtitle">Looking Back and Moving Forward</p>
+
+    <div class="photo-single">
+      <img src="../images/newsletters/2026-07/july-banner.jpg" alt="July 2026 newsletter banner" onclick="openLightbox(this)">
+    </div>
+
+    <section class="highlight-box">
+      <p>Our June presentation with AnnMarie Zezima from Get Organized A to Z was well attended and many participants were motivated to take on summer organizing tasks. The food that followed was plentiful and tasty. Everyone went home happy and full!</p>
+      <div class="photo-grid">
+        <img src="../images/newsletters/2026-07/get-organized-1.jpeg" alt="Get Organized A to Z" onclick="openLightbox(this)">
+        <img src="../images/newsletters/2026-07/get-organized-2.jpeg" alt="Get Organized A to Z presentation" onclick="openLightbox(this)">
+      </div>
+      <p>ARYCT and OECTA members collaborated to provide music for the Retirement Mass on June 8th at The Venetian Banquet Hall.</p>
+      <img src="../images/newsletters/2026-07/retirement-mass.jpeg" alt="Group photo at the Retirement Mass" onclick="openLightbox(this)">
+    </section>
+
+    <section>
+      <h2>Looking Back Over the Past Year...</h2>
+
+      <p><strong>We Listened and Reflected</strong></p>
+      <img class="photo-single" src="../images/newsletters/2026-07/listened-1.jpeg" alt="Members listening to a presentation" onclick="openLightbox(this)">
+      <div class="photo-grid">
+        <img src="../images/newsletters/2026-07/listened-2.jpeg" alt="Members reflecting together" onclick="openLightbox(this)">
+        <img src="../images/newsletters/2026-07/listened-3.jpeg" alt="Members gathered for a talk" onclick="openLightbox(this)">
+      </div>
+
+      <p><strong>We Created</strong></p>
+      <div class="photo-grid">
+        <img src="../images/newsletters/2026-07/created-1.jpeg" alt="Craft session" onclick="openLightbox(this)">
+        <img src="../images/newsletters/2026-07/created-2.jpeg" alt="Handmade creations" onclick="openLightbox(this)">
+      </div>
+
+      <p><strong>We Served Others</strong></p>
+      <div class="photo-grid">
+        <img src="../images/newsletters/2026-07/served-1.jpeg" alt="Volunteering together" onclick="openLightbox(this)">
+        <img src="../images/newsletters/2026-07/served-2.jpeg" alt="Community service event" onclick="openLightbox(this)">
+      </div>
+      <img class="photo-single" src="../images/newsletters/2026-07/served-3.jpeg" alt="Donation drive" onclick="openLightbox(this)">
+
+      <p><strong>We Partied</strong></p>
+      <img class="photo-single" src="../images/newsletters/2026-07/partied-1.jpg" alt="Members celebrating together" onclick="openLightbox(this)">
+      <div class="photo-grid">
+        <img src="../images/newsletters/2026-07/partied-2.jpg" alt="Celebration photo" onclick="openLightbox(this)">
+        <img src="../images/newsletters/2026-07/partied-3.jpg" alt="Members at a social gathering" onclick="openLightbox(this)">
+      </div>
+    </section>
+
+    <section class="highlight-box">
+      <p><strong>Collectively,</strong> through YOUR donations, e-transfers and ARYCT spending, the following was accomplished during this past academic year:</p>
+      <ul class="donation-list">
+        <li><span>OLQW Church</span><span>$400</span></li>
+        <li><span>St. Vincent de Paul</span><span>$500</span></li>
+        <li><span>Salvation Army</span><span>$550</span></li>
+        <li><span>Ride for Cancer</span><span>$1,100</span></li>
+        <li><span>Refugee Assistance</span><span>$2,500</span></li>
+        <li><span>Full Access Network</span><span>$2,750</span></li>
+        <li><span>City Street Outreach</span><span>$10,000</span></li>
+      </ul>
+      <p><strong>PLUS</strong> — Knitted items were given to 360 Kids, Rosalie Hall, and Tumbler Ridge B.C. We also held 10 Fill the Truck Events!</p>
+      <p><strong>Thank you to all! Every donation is greatly appreciated!</strong></p>
+    </section>
+
+    <section>
+      <h2>Moving Forward...</h2>
+      <p><strong>Come Dine with us at Taylor's Landing</strong><br>
+      76 O'Neill Rd, North York<br>
+      Tues. July 21 at noon</p>
+      <img class="photo-single" src="../images/newsletters/2026-07/taylors-landing-1.jpg" alt="Taylor's Landing restaurant" onclick="openLightbox(this)">
+      <div class="photo-grid">
+        <img src="../images/newsletters/2026-07/taylors-landing-2.jpg" alt="Taylor's Landing" onclick="openLightbox(this)">
+        <img src="../images/newsletters/2026-07/taylors-landing-3.jpg" alt="Taylor's Landing dining area" onclick="openLightbox(this)">
+      </div>
+      <p>The Shops at Don Mills is a lifestyle centre-type shopping centre located at Don Mills Road and Lawrence Avenue East in North York. There are 72 retail stores. Come spend some time exploring the stores or cafes and then join us for lunch. Shops range from Artitzia, Bath &amp; Body Works, CAA, Eddie Bauer, IndigoSpirit, Lindt Chocolates, Lululemon, Spanner and so much more.</p>
+      <p><strong>RSVP to <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a> if you plan to join us for lunch.</strong> Plenty of parking and easy access.</p>
+    </section>
+
+    <section>
+      <h2>Get Out the Vote</h2>
+      <p>Ensure that you are registered to vote in the October municipal and school board elections. Visit the <a href="https://www.elections.on.ca/" target="_blank" rel="noopener">Elections Ontario voter registration website</a> and click "Check." This website is managed by Elections Ontario and all personal information is secured and kept private.</p>
+    </section>
+
+    <section>
+      <h2>Trip to Ireland</h2>
+      <p><strong>April 24 – May 1, 2027</strong> with York Region Retired Teachers and friends</p>
+      <p>A trip to tour South and Southwest Ireland is being planned by a group of retired York Region teachers. Double Occupancy is $3,299.00 plus airfare.</p>
+      <p>Email <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a> to receive the full itinerary and further details.</p>
+    </section>
+
+    <section>
+      <h2>Keep the Suggestions Coming</h2>
+      <p>Keep those suggestions and feedback coming — things to repeat, things to try, venues to book or explore. Do you know someone who could lead a craft session or have access to a low cost venue to rent?</p>
+      <p>Would anyone be interested in... a Scrabble tournament, Euchre tournament, bowling, cooking lessons, craft sessions, speakers, or lunch dates around York Region and beyond?</p>
+    </section>
+
+    <section>
+      <h2>Dates at a Glance</h2>
+      <ul class="dates-list">
+        <li><span class="date">Tues. July 21</span><span>Lunch at Taylor's Landing</span></li>
+        <li><span class="date">Wed. Aug. 26</span><span>Back to School Drive</span></li>
+        <li><span class="date">Mon. Sept. 28</span><span>To Heck with the Bell Event... TBA</span></li>
+        <li><span class="date">Thurs. Oct. 15</span><span>Lunch and Presentation hosted by OTIP</span></li>
+        <li><span class="date">Wed. Oct. 28</span><span>Indigenous Awareness Part 2</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Good to Know</h2>
+      <p>Did you know? You may be eligible for an auto insurance discount if you're retired. <a href="https://bit.ly/4t6rZyC" target="_blank" rel="noopener">Learn more</a> #OTIPUpdate</p>
+    </section>
+
+    <p class="footer-note">
+      Visit us on Facebook — Active Retired York Catholic Teachers<br>
+      Email us at <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a>
+    </p>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(imgEl) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = imgEl.src;
+      lightboxImg.alt = imgEl.alt;
+      lightbox.classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
