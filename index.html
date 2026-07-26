@@ -20,12 +20,69 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
       background: var(--cream);
       font-family: 'Poppins', sans-serif;
       color: var(--text);
+    }
+
+    .site-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      background: var(--lavender);
+      padding: 0.75rem 1.5rem;
+    }
+
+    .site-nav a {
+      color: var(--plum);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus {
+      background: rgba(114, 52, 128, 0.12);
+    }
+
+    .content-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      scroll-margin-top: 1rem;
+    }
+
+    .content-section:not(:last-of-type) {
+      border-bottom: 3px solid var(--lavender);
+    }
+
+    .content-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--plum);
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      margin: 0 0 1rem;
+    }
+
+    .content-section p {
+      line-height: 1.7;
+      margin: 0 0 1rem;
+    }
+
+    .content-section .placeholder-note {
+      color: var(--olive);
+      font-style: italic;
     }
 
     .banner {
@@ -100,12 +157,18 @@
       text-align: center;
     }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      color: var(--plum);
-      font-size: clamp(1.8rem, 4.5vw, 2.75rem);
+    .title-banner {
+      background: #579cbd;
+      width: 100%;
+      display: flex;
+      justify-content: center;
       margin: 0 0 1rem;
-      letter-spacing: 0.5px;
+    }
+
+    .title-banner img {
+      max-width: 800px;
+      width: 100%;
+      display: block;
     }
 
     .tagline {
@@ -176,8 +239,15 @@
     <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">&times;</button>
     <img id="lightbox-img" src="" alt="">
   </div>
+  <div class="title-banner">
+    <img src="images/aryct-banner.png" alt="ARYCT - Active Retired York Catholic Teachers">
+  </div>
+  <nav class="site-nav">
+    <a href="#who-we-are">Who Are We</a>
+    <a href="#events">Events</a>
+    <a href="#newsletters">Newsletters</a>
+  </nav>
   <div class="body-content">
-    <h1>Active Retired York Catholic Teachers</h1>
     <p class="tagline">We are retired York OECTA members who like to stay connected and involved.</p>
     <div class="social-links">
       <a href="https://www.facebook.com/groups/776941489656858" target="_blank" rel="noopener" aria-label="Facebook Group">
@@ -204,6 +274,22 @@
       </a>
     </div>
   </div>
+
+  <section class="content-section" id="who-we-are">
+    <h2>Who Are We</h2>
+    <p>ARYCT is a community of retired York Region OECTA teachers who keep in touch through lunches, outings, and get-togethers throughout the year. We're here to stay connected, stay active, and support each other in retirement.</p>
+    <p class="placeholder-note">(Add more about the group's history and membership here.)</p>
+  </section>
+
+  <section class="content-section" id="events">
+    <h2>Events</h2>
+    <p class="placeholder-note">Upcoming events will be posted here — check back soon!</p>
+  </section>
+
+  <section class="content-section" id="newsletters">
+    <h2>Newsletters</h2>
+    <p class="placeholder-note">Newsletters will be posted here soon.</p>
+  </section>
 
   <script>
     function openLightbox(imgEl) {
