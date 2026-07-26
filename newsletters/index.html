@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Past Newsletters — ARYCT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --plum: #723480;
+      --olive: #808034;
+      --lavender: #dbd4ff;
+      --cream: #fffee3;
+      --text: #4a3552;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--cream);
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+    }
+
+    .top-bar {
+      background: var(--lavender);
+      padding: 0.9rem 1.5rem;
+      text-align: center;
+    }
+
+    .top-bar a {
+      color: var(--plum);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .archive {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .archive h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--plum);
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      text-align: center;
+      margin: 0 0 2rem;
+    }
+
+    .newsletter-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .newsletter-list a {
+      display: block;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .newsletter-list a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+    }
+
+    .newsletter-list .title {
+      font-family: 'Playfair Display', serif;
+      color: var(--plum);
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .newsletter-list .blurb {
+      color: var(--olive);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="../index.html#newsletters">&larr; Back to Home</a>
+  </div>
+
+  <div class="archive">
+    <h1>Past Newsletters</h1>
+    <ul class="newsletter-list">
+      <li>
+        <a href="2026-06.html">
+          <span class="title">June 2026</span>
+          <span class="blurb">Get Organized A to Z, the York Region Pride Parade, the Home &amp; Garden Tour, and our trip to Ireland.</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
