@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>August 2026 Newsletter — ARYCT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --plum: #723480;
+      --olive: #808034;
+      --lavender: #dbd4ff;
+      --cream: #fffee3;
+      --text: #4a3552;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--cream);
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+    }
+
+    .top-bar {
+      background: var(--lavender);
+      padding: 0.9rem 1.5rem;
+      text-align: center;
+    }
+
+    .top-bar a {
+      color: var(--plum);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 0.75rem;
+    }
+
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .newsletter {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .newsletter h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--plum);
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      text-align: center;
+      margin: 0 0 0.5rem;
+    }
+
+    .newsletter .subtitle {
+      text-align: center;
+      color: var(--olive);
+      font-weight: 600;
+      margin: 0 0 2rem;
+    }
+
+    .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--plum);
+      font-size: 1.4rem;
+      margin: 0 0 0.75rem;
+      border-left: 5px solid var(--olive);
+      padding-left: 0.75rem;
+    }
+
+    .newsletter section {
+      margin-bottom: 2.25rem;
+    }
+
+    .newsletter p {
+      line-height: 1.7;
+      margin: 0 0 1rem;
+    }
+
+    .newsletter img {
+      max-width: 100%;
+      border-radius: 10px;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .photo-single {
+      margin: 0 0 1rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 0 0 1rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .newsletter a {
+      color: var(--olive);
+      font-weight: 600;
+    }
+
+    .dates-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .dates-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--lavender);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .dates-list li:last-child {
+      border-bottom: none;
+    }
+
+    .dates-list .date {
+      font-weight: 700;
+      color: var(--plum);
+      white-space: nowrap;
+    }
+
+    .highlight-box {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .memorial-box {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      margin-bottom: 1.25rem;
+    }
+
+    .memorial-box:last-child {
+      margin-bottom: 0;
+    }
+
+    .memorial-box .name {
+      font-family: 'Playfair Display', serif;
+      color: var(--plum);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem;
+    }
+
+    .memorial-box .dates {
+      color: var(--olive);
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+    }
+
+    .memorial-box img {
+      max-width: 160px;
+      margin: 0 0 1rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--olive);
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      cursor: default;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1.75rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="../index.html">&larr; Home</a>
+    <a href="index.html">All Newsletters</a>
+  </div>
+
+  <div class="newsletter">
+    <h1>ARYCT Newsletter — August 2026</h1>
+    <p class="subtitle">Our August Focus</p>
+
+    <img class="photo-single" src="../images/newsletters/2026-08/hello-august.jpg" alt="Hello August graphic" onclick="openLightbox(this)">
+
+    <section class="highlight-box">
+      <p><strong>Our Taylor's Landing diners</strong> enjoyed a great lunch together in July!</p>
+      <img class="photo-single" src="../images/newsletters/2026-08/taylors-landing-diners.jpeg" alt="Our Taylor's Landing diners" onclick="openLightbox(this)">
+    </section>
+
+    <section>
+      <h2>Fill the Truck: Back to School Drive</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/back-to-school-drive.jpg" alt="Back to School Drive graphic" onclick="openLightbox(this)">
+      <p><strong>Wednesday, August 26, 10:00 – 11:00 a.m.</strong><br>
+      Our Lady Queen of the World Church Parking Lot<br>
+      10411 Bayview Ave, Richmond Hill</p>
+      <p><strong>Highest needs:</strong> backpacks and lunch bags.</p>
+      <p>It is very helpful to purchase a larger quantity of one or two items, rather than attempting to "fill a backpack," as items will be sorted for parents to select what is needed and most appropriate for their child/children.</p>
+      <p>Gently used clothing, linens, toys and small household items are also welcome! Packaging clothing in clear plastic bags is preferred with a visible label identifying sex and size.</p>
+      <p>For those that wish to contribute and are unable to attend, we accept e-transfers and will purchase for you! We will also provide you with an income tax receipt after the completion of the drive for donations over $25.00 with itemized receipts.</p>
+      <p><strong>Donations to The Cycle of Care will also be accepted at the Back to School Drive.</strong></p>
+      <img class="photo-single" src="../images/newsletters/2026-08/cycle-of-care.png" alt="The Cycle of Care donation graphic" onclick="openLightbox(this)" style="max-width: 320px;">
+    </section>
+
+    <section>
+      <h2>From Royal Rose Gallery</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/royal-rose-gallery.jpg" alt="Royal Rose Gallery: The Unfolding Year exhibition poster" onclick="openLightbox(this)" style="max-width: 320px;">
+      <p>We are invited to the Opening Reception on Sat. August 8th. If you attend, please take time to observe and reflect on our ARYCT display of "The Canadian Library" that honours missing and murdered Indigenous women. This display was created in 2024.</p>
+    </section>
+
+    <section>
+      <h2>From Interfaith Network</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/interfaith-dialogue.png" alt="Interfaith Dialogue on Peace graphic" onclick="openLightbox(this)">
+      <p>Join a Dialogue on Peace to celebrate Interfaith Awareness Week — <strong>Tuesday, August 11, 2026, 7:00 pm – 8:30 pm EDT via Zoom.</strong></p>
+      <p><a href="https://buytickets.at/interfaithcircle/2305076" target="_blank" rel="noopener">Register here &rarr;</a></p>
+      <p>Featuring "Peace Train" by Cat Stevens. Images of peace will be shared, reflect on how peace affects your lives, and understand how we contribute to peace in our world today, both as individuals and in community.</p>
+    </section>
+
+    <section>
+      <h2>From Anna Santarossa — Special Aug 18th Offer</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/the-pavilion.jpg" alt="The Pavilion outdoor theatre poster" onclick="openLightbox(this)" style="max-width: 320px;">
+      <p>The Nobleton &amp; King City Garden Club, in partnership with the King Theatre Company, is delighted to offer a limited number of discounted tickets for the enchanting outdoor production <em>The Pavilion</em> on Tuesday, August 18th.</p>
+      <p>Special discounted tickets are limited, so please RSVP as soon as possible to avoid being disappointed. Send the names of those who will be attending to <a href="mailto:nobletonkingcitygardeclub@gmail.com">nobletonkingcitygardeclub@gmail.com</a> to confirm that tickets are still available. Then send an e-transfer to lock in your ticket(s).</p>
+      <p><strong>Location:</strong> Outdoors at Pine Farms Orchard, 2700 16th Sideroad, King City, ON L7B 1A3<br>
+      <strong>Admission:</strong> Begins at 6:15 PM for seating, food, and drinks<br>
+      <strong>Showtime:</strong> 7:00 PM sharp — discounted tickets are $30.00<br>
+      <strong>Runtime:</strong> Approximately 90 minutes (no intermission)</p>
+      <p><a href="https://www.kingtheatre.ca/thepavilion" target="_blank" rel="noopener">Learn more about the show &rarr;</a></p>
+    </section>
+
+    <section>
+      <h2>A Summer Event for Your Book Club!</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/michelle-good-event.jpg" alt="Michelle Good Eliza Sunshine book event poster" onclick="openLightbox(this)" style="max-width: 320px;">
+      <p><strong>Eliza Sunshine</strong> by Michelle Good, featuring a reading and conversation with Tanya Talaga. Book signing to follow.</p>
+      <p>From the award-winning and best-selling author of <em>Five Little Indians</em> comes a powerful family saga following three generations of Cree women and the storytelling tradition that connects them to each other. "Eliza Sunshine will fill you with hope, anger and pride." —Tanya Talaga</p>
+      <p>Cost: $18.12</p>
+      <p><a href="https://www.eventbrite.ca/e/michelle-good-toronto-book-launch-eliza-sunshine-tickets-1992957132432" target="_blank" rel="noopener">Get tickets here &rarr;</a></p>
+    </section>
+
+    <section>
+      <h2>Milk Bag Weavers Are Moving to a New Day!</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/milk-bag-weavers-potluck.jpeg" alt="Milk Bag Weavers celebrating their annual June Pot Luck" onclick="openLightbox(this)">
+      <p>Due to ongoing construction at Our Lady Queen of the World church, we are moving our weaving day to Monday. Fall dates are as follows:</p>
+      <ul class="dates-list">
+        <li><span class="date">Mon. Sept. 14</span><span>9:30 – 11:00</span></li>
+        <li><span class="date">Mon. Oct. 5</span><span>9:30 – 11:00</span></li>
+        <li><span class="date">Mon. Nov. 16</span><span>9:30 – 11:00 (moved due to parish craft show)</span></li>
+        <li><span class="date">Mon. Dec. 7</span><span>9:30 – 11:00</span></li>
+      </ul>
+      <p>Winter dates will be on "first" Monday afternoons.</p>
+    </section>
+
+    <section>
+      <h2>Rest in Peace</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/rest-in-peace.jpg" alt="Rest in Peace graphic" onclick="openLightbox(this)">
+
+      <div class="memorial-box">
+        <img src="../images/newsletters/2026-08/mary-grace-talamo.png" alt="Mary Grace Talamo" onclick="openLightbox(this)">
+        <p class="name">Mary Grace Talamo</p>
+        <p class="dates">June 5, 1957 — July 1, 2026</p>
+        <p>A pioneer staff member at St. Augustine CHS.</p>
+        <p><a href="https://www.westminstercemetery.ca/obituaries/mary-talamo" target="_blank" rel="noopener">Read the obituary &rarr;</a></p>
+      </div>
+
+      <div class="memorial-box">
+        <img src="../images/newsletters/2026-08/irene-macdonald.jpg" alt="Dr. Irene Frances MacDonald" onclick="openLightbox(this)">
+        <p class="name">Dr. Irene Frances MacDonald</p>
+        <p class="dates">Sept. 14, 1931 — July 21, 2026</p>
+        <p>First Chief Psychologist of YCDSB from 1975–1994.</p>
+        <p>Visitation: July 28, 2026, 6 to 8pm, Taylor Funeral Home, Newmarket.<br>
+        Funeral Mass: July 29, 2026 at 11am at Our Lady of Grace Catholic Church in Aurora.</p>
+        <p><a href="https://www.arbormemorial.ca/en/taylor/obituaries/dr-irene-frances-macdonald/164176.html" target="_blank" rel="noopener">Read the obituary &rarr;</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Invitation from Neighbouring Retirees: Trip to Ireland</h2>
+      <img class="photo-single" src="../images/newsletters/2026-06/ireland-graphic.png" alt="Map of Ireland" onclick="openLightbox(this)" style="max-width: 320px;">
+      <p><strong>April 24 – May 1, 2027</strong> with York Region Retired Teachers and friends</p>
+      <p>A trip to tour South and Southwest Ireland is being planned by a group of retired York Region teachers. Double Occupancy is $3,299.00 plus airfare.</p>
+      <p>Email <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a> to receive the full itinerary and further details.</p>
+    </section>
+
+    <section>
+      <h2>Keep the Suggestions Coming</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/any-suggestions.jpeg" alt="Any Suggestions graphic" onclick="openLightbox(this)" style="max-width: 320px;">
+      <p>Keep those suggestions and feedback coming — things to repeat, things to try, venues to book or explore. Do you know someone who could lead a craft session or have access to a low cost venue to rent?</p>
+      <p>Is there a topic that you would like addressed? Fraud protection, pros and cons of AI, finance management, elder care? Is there a restaurant in Woodbridge or Maple that you would like to recommend for us to try?</p>
+    </section>
+
+    <section>
+      <h2>A New Kind of Long Range Plans!</h2>
+      <ul class="dates-list">
+        <li><span class="date">Wed. Aug. 26</span><span>Back to School and Cycle of Care Drive</span></li>
+        <li><span class="date">Mon. Sept. 14</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Thurs. Sept. 17</span><span>Harbour of Hope East Coast Shindig — Northridge Community Church, Aurora</span></li>
+        <li><span class="date">Mon. Sept. 28</span><span>To Heck with the Bell Event... Lunch and Bingo at Crow's Nest, Newmarket</span></li>
+        <li><span class="date">Mon. Oct. 5</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Thurs. Oct. 15</span><span>Lunch and Presentation hosted by OTIP — OECTA York Unit Office</span></li>
+        <li><span class="date">Wed. Oct. 28</span><span>Indigenous Awareness Part 2 — Lasky Hall, King City</span></li>
+        <li><span class="date">Mon. Nov. 16</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Wed. Dec. 2</span><span>Christmas Fundraising Luncheon — Stonehaven, Newmarket</span></li>
+        <li><span class="date">Sun. Dec. 6</span><span>Creating a Christmas Centre Piece — Lasky Hall, King City</span></li>
+        <li><span class="date">Mon. Dec. 7</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Mon. Jan. 4</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Mon. Feb. 1</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Feb. TBD</span><span>Lunch at Mandarin, Vaughan</span></li>
+        <li><span class="date">Mon. Mar. 1</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Mar. 9 or 10 TBD</span><span>Irish Pub, Market Brewery, Newmarket</span></li>
+        <li><span class="date">Mon. Apr. 5</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Wed. Apr. 28</span><span>Days of Mourning Recognition</span></li>
+        <li><span class="date">Mon. May 3</span><span>Milk Bag Weaving; Jeans and Jewels Fundraiser</span></li>
+        <li><span class="date">Mon. June 7</span><span>Milk Bag Weaving and Pot Luck Lunch; OECTA Retirement &amp; 25 Year Celebration</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Good to Know</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/travel-insurance.png" alt="Travel insurance graphic" onclick="openLightbox(this)" style="max-width: 320px;">
+      <p>Get peace of mind with 100 days of travel coverage and unlimited trips per year.</p>
+    </section>
+
+    <p class="footer-note">
+      Visit us on Facebook — Active Retired York Catholic Teachers<br>
+      Email us at <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a>
+    </p>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(imgEl) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = imgEl.src;
+      lightboxImg.alt = imgEl.alt;
+      lightbox.classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
