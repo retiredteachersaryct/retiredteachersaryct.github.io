@@ -82,6 +82,25 @@
       border-radius: 10px;
       display: block;
       margin: 0 auto 1rem;
+      cursor: zoom-in;
+    }
+
+    .photo-single {
+      margin: 0 0 1rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 0 0 1rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
     }
 
     .newsletter a {
@@ -125,6 +144,52 @@
       font-size: 0.95rem;
       margin-top: 3rem;
     }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      cursor: default;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      margin: 0;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1.75rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -136,13 +201,21 @@
   <div class="newsletter">
     <h1>ARYCT Newsletter — June 2026</h1>
 
+    <img class="photo-single" src="../images/newsletters/2026-06/hello-june.jpg" alt="Hello June rainbow graphic" onclick="openLightbox(this)" style="max-width: 200px;">
+
     <section class="highlight-box">
       <p><strong>Farah's story</strong> of her journey from Afghanistan to Canada inspired her third attentive audience. You could hear a pin drop as she spoke. Her story is one of resilience, resourcefulness and compassion as a loving wife and mother!</p>
+      <img class="photo-single" src="../images/newsletters/2026-06/farah-story.jpeg" alt="Farah speaking to an attentive audience" onclick="openLightbox(this)">
       <p><strong>ARYCT members gathered to support CFUW's Bingo night.</strong> And we had a winner! The letter "H" now has a new meaning for Maria Bondi!</p>
+      <div class="photo-grid">
+        <img src="../images/newsletters/2026-06/bingo-night-1.jpg" alt="Members at CFUW Bingo night" onclick="openLightbox(this)">
+        <img src="../images/newsletters/2026-06/bingo-night-2.jpg" alt="Maria Bondi with her winning bingo card" onclick="openLightbox(this)">
+      </div>
     </section>
 
     <section>
       <h2>Get Organized A to Z &amp; Pot Luck</h2>
+      <img class="photo-single" src="../images/newsletters/2026-06/get-organized-logo.jpeg" alt="Get Organized A to Z logo" onclick="openLightbox(this)" style="max-width: 260px;">
       <p>
         Our Lady Queen of the World Church basement<br>
         10475 Bayview Ave, Richmond Hill<br>
@@ -151,16 +224,19 @@
       <p>The milk bag weavers are offering themselves a treat at their final 2025–2026 session. AnnMarie Zezima, from Get Organized A to Z, will speak to us followed by a Pot Luck. She is the daughter of Dolores Zezima, our amazing snack coordinator. We ask that all Pot Luck donations be brought plated and ready to serve.</p>
       <p><strong>All are Welcome! Bring a friend! Kindly RSVP.</strong></p>
       <p>Daniel will arrive around 11:00 to "Fill the Truck" and has been invited to stay for lunch.</p>
+      <img class="photo-single" src="../images/newsletters/2026-06/fill-the-truck.jpg" alt="City Street Outreach Fill the Truck van" onclick="openLightbox(this)">
     </section>
 
     <section>
       <h2>York Region Pride Parade</h2>
+      <img class="photo-single" src="../images/newsletters/2026-06/pride-parade-march.jpeg" alt="York Catholic Teachers marching in the York Region Pride Parade" onclick="openLightbox(this)">
       <p>We are invited to walk with York Catholic Teachers in the York Region Pride Parade on <strong>Saturday June 13th 2026 @ 4:00 pm</strong>. You are also invited to stop by the York Catholic Teachers booth at the Riverwalk Commons on Saturday.</p>
       <p>The YCT theme for the parade is <em>"Embrace Love, Teach with Pride."</em> If you have a pride themed t-shirt, please wear it!</p>
     </section>
 
     <section>
       <h2>Come Be Inspired: Home &amp; Garden Tour</h2>
+      <img class="photo-single" src="../images/newsletters/2026-06/home-garden-tour.jpeg" alt="CFUW Home and Garden Tour 2026 flyer" onclick="openLightbox(this)" style="max-width: 320px;">
       <p>Tickets are now on sale:<br>
       Tour — $45.00<br>
       Tour and Lunch — $65.00</p>
@@ -169,6 +245,7 @@
 
     <section>
       <h2>Trip to Ireland</h2>
+      <img class="photo-single" src="../images/newsletters/2026-06/ireland-graphic.png" alt="Map of Ireland" onclick="openLightbox(this)" style="max-width: 320px;">
       <p><strong>April 24 – May 1, 2027</strong> with York Region Retired Teachers and friends</p>
       <p>A trip to tour South and Southwest Ireland is being planned by a group of retired York Region teachers. Double Occupancy is $3,299.00 plus airfare.</p>
       <p>Email <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a> to receive the full itinerary and further details.</p>
@@ -176,6 +253,7 @@
 
     <section>
       <h2>Looking Ahead to 2026–2027</h2>
+      <img class="photo-single" src="../images/newsletters/2026-06/any-suggestions.jpeg" alt="Any Suggestions graphic" onclick="openLightbox(this)" style="max-width: 320px;">
       <p>Before you know it your ARYCT planning team will be booking events for 2026–2027. Keep those suggestions and feedback coming — things to repeat, things to try, venues to book or explore.</p>
       <p>Would anyone be interested in... a Scrabble tournament, Euchre tournament, bowling, cooking lessons, craft sessions, speakers, or lunch dates around York Region and beyond?</p>
     </section>
@@ -199,5 +277,28 @@
       Email us at <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a>
     </p>
   </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(imgEl) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = imgEl.src;
+      lightboxImg.alt = imgEl.alt;
+      lightbox.classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
