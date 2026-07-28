@@ -130,6 +130,43 @@
       font-size: 1.75rem;
       line-height: 1;
       cursor: pointer;
+      z-index: 1001;
+    }
+
+    .lightbox-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .lightbox-prev {
+      left: 1.25rem;
+    }
+
+    .lightbox-next {
+      right: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      .lightbox-nav {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+      }
     }
 
     @media (max-width: 480px) {
@@ -170,16 +207,32 @@
 
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous photo" onclick="event.stopPropagation(); showOffset(-1)">&#10094;</button>
+    <button class="lightbox-nav lightbox-next" aria-label="Next photo" onclick="event.stopPropagation(); showOffset(1)">&#10095;</button>
     <img id="lightbox-img" src="" alt="">
   </div>
 
   <script>
+    const galleryPhotos = Array.from(document.querySelectorAll('.photo-grid img'));
+    let currentPhotoIndex = -1;
+
     function openLightbox(imgEl) {
-      const lightbox = document.getElementById('lightbox');
+      currentPhotoIndex = galleryPhotos.indexOf(imgEl);
+      showPhoto(currentPhotoIndex);
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function showPhoto(index) {
+      const imgEl = galleryPhotos[index];
       const lightboxImg = document.getElementById('lightbox-img');
       lightboxImg.src = imgEl.src;
       lightboxImg.alt = imgEl.alt;
-      lightbox.classList.add('open');
+    }
+
+    function showOffset(offset) {
+      if (currentPhotoIndex === -1) return;
+      currentPhotoIndex = (currentPhotoIndex + offset + galleryPhotos.length) % galleryPhotos.length;
+      showPhoto(currentPhotoIndex);
     }
 
     function closeLightbox() {
@@ -187,7 +240,10 @@
     }
 
     document.addEventListener('keydown', function (e) {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
       if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showOffset(-1);
+      if (e.key === 'ArrowRight') showOffset(1);
     });
   </script>
 </body>
