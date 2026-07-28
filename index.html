@@ -95,26 +95,20 @@
       text-decoration: underline;
     }
 
-    .banner {
-      display: flex;
-      gap: 4px;
-      width: 100%;
-      height: 220px;
-    }
-
-    @media (min-width: 700px) {
-      .banner {
-        height: 480px;
-      }
-    }
-
-    .banner img {
-      flex: 1;
-      min-width: 0;
-      height: 100%;
-      object-fit: cover;
+    .team-photo {
+      max-width: 100%;
+      border-radius: 12px;
       display: block;
+      margin: 1.5rem auto 0.75rem;
       cursor: zoom-in;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .photo-caption {
+      font-size: 0.9rem;
+      color: var(--olive);
+      font-weight: 500;
+      margin: 0;
     }
 
     .lightbox {
@@ -155,18 +149,6 @@
       cursor: pointer;
     }
 
-    .divider {
-      height: 6px;
-      background: var(--lavender);
-    }
-
-    .body-content {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 3rem 2rem 3.5rem;
-      text-align: center;
-    }
-
     .title-banner {
       background: #579cbd;
       width: 100%;
@@ -175,17 +157,9 @@
     }
 
     .title-banner img {
-      max-width: 800px;
+      max-width: 900px;
       width: 100%;
       display: block;
-    }
-
-    .tagline {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      color: var(--olive);
-      margin: 0 0 2.5rem;
-      line-height: 1.6;
-      font-weight: 500;
     }
 
     .social-links {
@@ -218,12 +192,6 @@
     }
 
     @media (max-width: 480px) {
-      .banner {
-        height: 150px;
-      }
-      .body-content {
-        padding: 2rem 1.5rem 2.5rem;
-      }
       .social-links a {
         width: 76px;
         height: 76px;
@@ -237,13 +205,6 @@
   </style>
 </head>
 <body>
-  <div class="banner">
-    <img src="images/photo3.jpg" alt="Group photo of retired teachers at a gathering" onclick="openLightbox(this)">
-    <img src="images/photo1.jpg" alt="Retired teachers at a restaurant celebration" onclick="openLightbox(this)">
-    <img src="images/photo2.jpg" alt="Retired teachers at the Neil Diamond Musical" onclick="openLightbox(this)">
-  </div>
-  <div class="divider"></div>
-
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">&times;</button>
     <img id="lightbox-img" src="" alt="">
@@ -264,6 +225,8 @@
     <p>ARYCT (Active Retired York Catholic Teachers) is a community of retired OECTA members from York Region who get together throughout the year to stay connected, active, and involved. We meet for guest speakers, outings, lunches and hands-on activities like our milk bag weavers group.</p>
     <p>We're also proud to give back. Through member donations and fundraising, ARYCT has supported organizations like City Street Outreach, St. Vincent de Paul, the Salvation Army, Ride for Cancer, and local refugee and outreach programs while our Fill the Truck drives and hand-knitted donations have reached families and shelters across the region.</p>
     <p>Whether it's an activity, a day trip, a themed tour, or simply lunch with old friends, ARYCT is about keeping the relationships and community spirit of our teaching years alive in retirement.</p>
+    <img class="team-photo" src="images/team.png" alt="ARYCT team: Melanie Fintelman, Kelly Pickard-Lefterys, Anna Santarossa, Sharon Gusz (co-chair), Ivana Todd (co-chair) and Marilynne Leach" onclick="openLightbox(this)">
+    <p class="photo-caption">Melanie Fintelman, Kelly Pickard-Lefterys, Anna Santarossa, Sharon Gusz (co-chair), Ivana Todd (co-chair) and Marilynne Leach</p>
   </section>
 
   <section class="content-section" id="events">
