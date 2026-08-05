@@ -87,20 +87,50 @@
       gap: 1rem;
     }
 
-    .photo-grid img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
+    .photo-grid figure {
+      margin: 0;
+      background: #ffffff;
       border-radius: 12px;
-      display: block;
-      cursor: zoom-in;
+      overflow: hidden;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .photo-grid img:hover {
+    .photo-grid figure:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .photo-grid figcaption {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .photo-grid figcaption > :first-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .photo-date {
+      color: var(--accent-warm);
+      font-size: 0.75rem;
+      font-weight: 600;
+      flex-shrink: 0;
     }
 
     .lightbox {
@@ -126,6 +156,20 @@
       cursor: default;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
       border-radius: 0;
+    }
+
+    .lightbox-caption {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.5rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      cursor: default;
     }
 
     .lightbox-close {
@@ -200,36 +244,126 @@
     <p class="subtitle">Moments from our lunches, outings, and get-togethers</p>
 
     <div class="photo-grid">
-      <img src="images/photo3.jpg" alt="Group photo of retired teachers at a gathering" onclick="openLightbox(this)">
-      <img src="images/photo1.jpg" alt="Retired teachers at a restaurant celebration" onclick="openLightbox(this)">
-      <img src="images/photo2.jpg" alt="Retired teachers at the Neil Diamond Musical" onclick="openLightbox(this)">
-      <img src="images/gallery/silent-auction-1.jpeg" alt="Members with silent auction gift baskets" onclick="openLightbox(this)">
-      <img src="images/gallery/silent-auction-2.jpeg" alt="Members holding silent auction gift baskets by the Christmas trees" onclick="openLightbox(this)">
-      <img src="images/gallery/st-patricks-lunch-1.jpeg" alt="Members celebrating St. Patrick's Day lunch" onclick="openLightbox(this)">
-      <img src="images/gallery/st-patricks-lunch-2.jpeg" alt="Larger group at the St. Patrick's Day lunch" onclick="openLightbox(this)">
-      <img src="images/gallery/snack-volunteers.jpeg" alt="ARYCT volunteers preparing snacks" onclick="openLightbox(this)">
-      <img src="images/gallery/memorial-tribute-singers.jpg" alt="Members singing at a Days of Mourning memorial tribute" onclick="openLightbox(this)">
-      <img src="images/gallery/memorial-tribute-group.jpg" alt="Group at the Days of Mourning memorial" onclick="openLightbox(this)">
-      <img src="images/gallery/canadian-library-project.jpg" alt="The Canadian Library Project display at Royal Rose Gallery" onclick="openLightbox(this)">
-      <img src="images/gallery/irish-pub-band.jpg" alt="Live band at the Irish Pub outing, Market Brewing Co." onclick="openLightbox(this)">
-      <img src="images/gallery/baking-volunteers.jpg" alt="Members packing baked treats for a donation drive" onclick="openLightbox(this)">
-      <img src="images/gallery/euchre-cards.jpg" alt="Members playing cards at an outdoor pavilion" onclick="openLightbox(this)">
-      <img src="images/gallery/pottageville-group.jpg" alt="Group photo at the Pottageville pavilion" onclick="openLightbox(this)">
-      <img src="images/gallery/canadian-library-journals.jpg" alt="Members with journals from the Canadian Library project" onclick="openLightbox(this)">
-      <img src="images/gallery/christmas-packages.jpg" alt="Members packing Christmas gift packages" onclick="openLightbox(this)">
-      <img src="images/gallery/cnoy-2022.jpg" alt="Coldest Night of the Year 2022 fundraising walk" onclick="openLightbox(this)">
-      <img src="images/gallery/royal-rose-craft-sale.jpg" alt="Members selling comfort dolls at the Royal Rose Gallery craft sale" onclick="openLightbox(this)">
-      <img src="images/gallery/remembrance-craft-sale.jpg" alt="Members at a Remembrance Day craft sale table" onclick="openLightbox(this)">
-      <img src="images/gallery/family-assistance-outreach.jpg" alt="Members with the City Street Outreach truck" onclick="openLightbox(this)">
-      <img src="images/gallery/indigenous-awareness-circle.jpg" alt="Members gathered for an Indigenous Awareness event" onclick="openLightbox(this)">
-      <img src="images/gallery/garden-tour-group.jpg" alt="Members at a garden tour outing" onclick="openLightbox(this)">
-      <img src="images/gallery/mandarin-lunch.jpg" alt="Members at a group lunch at Mandarin" onclick="openLightbox(this)">
-      <img src="images/gallery/painting-class.jpg" alt="Members showing their paintings from a paint night class" onclick="openLightbox(this)">
-      <img src="images/gallery/refugee-presentation.jpg" alt="Members at a refugee presentation" onclick="openLightbox(this)">
-      <img src="images/gallery/sandwich-prep.jpg" alt="Members preparing sandwiches and pastries for donation" onclick="openLightbox(this)">
-      <img src="images/gallery/sandwiches-milk-bags-delivery.jpg" alt="Members delivering sandwiches and milk bag mats to City Street Outreach" onclick="openLightbox(this)">
-      <img src="images/gallery/weavers-group.jpg" alt="Milk bag weavers group with finished sleeping mats" onclick="openLightbox(this)">
-      <img src="images/gallery/weaving-at-school.jpg" alt="Milk bag weaving demonstration at a school" onclick="openLightbox(this)">
+      <figure>
+        <img src="images/gallery/refugee-presentation.jpg" alt="Members at a refugee presentation" data-caption="refugee-presentation &mdash; May 27, 2026" onclick="openLightbox(this)">
+        <figcaption>refugee-presentation<span class="photo-date">May 27, 2026</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/weaving-at-school.jpg" alt="Milk bag weaving demonstration at a school" data-caption="weaving-at-school &mdash; April 23, 2026" onclick="openLightbox(this)">
+        <figcaption>weaving-at-school<span class="photo-date">April 23, 2026</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/snack-volunteers.jpeg" alt="ARYCT volunteers preparing snacks" data-caption="snack-volunteers &mdash; April 22, 2026" onclick="openLightbox(this)">
+        <figcaption>snack-volunteers<span class="photo-date">April 22, 2026</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/remembrance-craft-sale.jpg" alt="Members at a Remembrance Day craft sale table" data-caption="remembrance-craft-sale &mdash; November 15, 2025" onclick="openLightbox(this)">
+        <figcaption>remembrance-craft-sale<span class="photo-date">November 15, 2025</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/pottageville-group.jpg" alt="Group photo at the Pottageville pavilion" data-caption="pottageville-group &mdash; September 24, 2025" onclick="openLightbox(this)">
+        <figcaption>pottageville-group<span class="photo-date">September 24, 2025</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/garden-tour-group.jpg" alt="Members at a garden tour outing" data-caption="garden-tour-group &mdash; July 9, 2025" onclick="openLightbox(this)">
+        <figcaption>garden-tour-group<span class="photo-date">July 9, 2025</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/painting-class.jpg" alt="Members showing their paintings from a paint night class" data-caption="painting-class &mdash; June 11, 2025" onclick="openLightbox(this)">
+        <figcaption>painting-class<span class="photo-date">June 11, 2025</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/memorial-tribute-group.jpg" alt="Group at the Days of Mourning memorial" data-caption="memorial-tribute-group &mdash; April 28, 2025" onclick="openLightbox(this)">
+        <figcaption>memorial-tribute-group<span class="photo-date">April 28, 2025</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/royal-rose-craft-sale.jpg" alt="Members selling comfort dolls at the Royal Rose Gallery craft sale" data-caption="royal-rose-craft-sale &mdash; November 15, 2024" onclick="openLightbox(this)">
+        <figcaption>royal-rose-craft-sale<span class="photo-date">November 15, 2024</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/canadian-library-project.jpg" alt="The Canadian Library Project display at Royal Rose Gallery" data-caption="canadian-library-project &mdash; June 21, 2024" onclick="openLightbox(this)">
+        <figcaption>canadian-library-project<span class="photo-date">June 21, 2024</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/cnoy-2022.jpg" alt="Coldest Night of the Year 2022 fundraising walk" data-caption="cnoy-2022 &mdash; February 26, 2022" onclick="openLightbox(this)">
+        <figcaption>cnoy-2022<span class="photo-date">February 26, 2022</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/family-assistance-outreach.jpg" alt="Members with the City Street Outreach truck" data-caption="family-assistance-outreach &mdash; December 1, 2020" onclick="openLightbox(this)">
+        <figcaption>family-assistance-outreach<span class="photo-date">December 1, 2020</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/christmas-packages.jpg" alt="Members packing Christmas gift packages" data-caption="christmas-packages &mdash; November 9, 2020" onclick="openLightbox(this)">
+        <figcaption>christmas-packages<span class="photo-date">November 9, 2020</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/baking-volunteers.jpg" alt="Members packing baked treats for a donation drive" data-caption="baking-volunteers &mdash; February 14, 2019" onclick="openLightbox(this)">
+        <figcaption>baking-volunteers<span class="photo-date">February 14, 2019</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/sandwiches-milk-bags-delivery.jpg" alt="Members delivering sandwiches and milk bag mats to City Street Outreach" data-caption="sandwiches-milk-bags-delivery &mdash; May 17, 2018" onclick="openLightbox(this)">
+        <figcaption>sandwiches-milk-bags-delivery<span class="photo-date">May 17, 2018</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/photo3.jpg" alt="Group photo of retired teachers at a gathering" data-caption="photo3 &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>photo3<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/photo1.jpg" alt="Retired teachers at a restaurant celebration" data-caption="photo1 &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>photo1<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/photo2.jpg" alt="Retired teachers at the Neil Diamond Musical" data-caption="photo2 &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>photo2<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/silent-auction-1.jpeg" alt="Members with silent auction gift baskets" data-caption="silent-auction-1 &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>silent-auction-1<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/silent-auction-2.jpeg" alt="Members holding silent auction gift baskets by the Christmas trees" data-caption="silent-auction-2 &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>silent-auction-2<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/st-patricks-lunch-1.jpeg" alt="Members celebrating St. Patrick's Day lunch" data-caption="st-patricks-lunch-1 &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>st-patricks-lunch-1<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/st-patricks-lunch-2.jpeg" alt="Larger group at the St. Patrick's Day lunch" data-caption="st-patricks-lunch-2 &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>st-patricks-lunch-2<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/memorial-tribute-singers.jpg" alt="Members singing at a Days of Mourning memorial tribute" data-caption="memorial-tribute-singers &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>memorial-tribute-singers<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/irish-pub-band.jpg" alt="Live band at the Irish Pub outing, Market Brewing Co." data-caption="irish-pub-band &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>irish-pub-band<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/euchre-cards.jpg" alt="Members playing cards at an outdoor pavilion" data-caption="euchre-cards &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>euchre-cards<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/canadian-library-journals.jpg" alt="Members with journals from the Canadian Library project" data-caption="canadian-library-journals &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>canadian-library-journals<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/indigenous-awareness-circle.jpg" alt="Members gathered for an Indigenous Awareness event" data-caption="indigenous-awareness-circle &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>indigenous-awareness-circle<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/mandarin-lunch.jpg" alt="Members at a group lunch at Mandarin" data-caption="mandarin-lunch &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>mandarin-lunch<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/sandwich-prep.jpg" alt="Members preparing sandwiches and pastries for donation" data-caption="sandwich-prep &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>sandwich-prep<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery/weavers-group.jpg" alt="Milk bag weavers group with finished sleeping mats" data-caption="weavers-group &mdash; Date unknown" onclick="openLightbox(this)">
+        <figcaption>weavers-group<span class="photo-date">Date unknown</span></figcaption>
+      </figure>
     </div>
   </div>
 
@@ -238,6 +372,7 @@
     <button class="lightbox-nav lightbox-prev" aria-label="Previous photo" onclick="event.stopPropagation(); showOffset(-1)">&#10094;</button>
     <button class="lightbox-nav lightbox-next" aria-label="Next photo" onclick="event.stopPropagation(); showOffset(1)">&#10095;</button>
     <img id="lightbox-img" src="" alt="">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
   </div>
 
   <script>
@@ -255,6 +390,7 @@
       const lightboxImg = document.getElementById('lightbox-img');
       lightboxImg.src = imgEl.src;
       lightboxImg.alt = imgEl.alt;
+      document.getElementById('lightbox-caption').textContent = imgEl.dataset.caption || '';
     }
 
     function showOffset(offset) {
