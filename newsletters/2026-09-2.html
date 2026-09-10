@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPMHLT1HVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NPMHLT1HVX');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>September 2026 (No. 2) Newsletter — ARYCT</title>
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../images/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/favicon-16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #1c6e8c;
+      --olive: #808034;
+      --teal-light: #d3e9f0;
+      --white: #ffffff;
+      --text: #3a4a4f;
+      --accent-link: #B5533C;
+      --accent-warm: #8F6530;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--white);
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+    }
+
+    .top-bar {
+      background: var(--teal-light);
+      padding: 0.9rem 1.5rem;
+      text-align: center;
+    }
+
+    .top-bar a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 0.75rem;
+    }
+
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .newsletter {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .newsletter h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--teal);
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      text-align: center;
+      margin: 0 0 0.5rem;
+    }
+
+    .newsletter .subtitle {
+      text-align: center;
+      color: var(--accent-warm);
+      font-weight: 600;
+      margin: 0 0 2rem;
+    }
+
+    .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--teal);
+      font-size: 1.4rem;
+      margin: 0 0 0.75rem;
+      border-left: 5px solid var(--teal);
+      padding-left: 0.75rem;
+    }
+
+    .newsletter section {
+      margin-bottom: 2.25rem;
+    }
+
+    .newsletter p {
+      line-height: 1.7;
+      margin: 0 0 1rem;
+    }
+
+    .newsletter img {
+      max-width: 100%;
+      border-radius: 10px;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .photo-single {
+      margin: 0 0 1rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 0 0 1rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .newsletter a {
+      color: var(--accent-link);
+      font-weight: 600;
+    }
+
+    .dates-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .dates-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--teal-light);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .dates-list li:last-child {
+      border-bottom: none;
+    }
+
+    .dates-list .date {
+      font-weight: 700;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+
+    .highlight-box {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .memorial-box {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      margin-bottom: 1.25rem;
+    }
+
+    .memorial-box:last-child {
+      margin-bottom: 0;
+    }
+
+    .memorial-box .name {
+      font-family: 'Playfair Display', serif;
+      color: var(--teal);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem;
+    }
+
+    .memorial-box .dates {
+      color: var(--accent-warm);
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+    }
+
+    .memorial-box img {
+      max-width: 160px;
+      margin: 0 0 1rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--accent-warm);
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      cursor: default;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1.75rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="../index.html">&larr; Home</a>
+    <a href="index.html">All Newsletters</a>
+  </div>
+
+  <div class="newsletter">
+    <h1>ARYCT Newsletter — September 2026 (No. 2)</h1>
+    <p class="subtitle">Time to RSVP</p>
+
+    <img class="photo-single" src="../images/newsletters/2026-09/masthead.jpg" alt="Active Retired York Catholic Teachers banner" onclick="openLightbox(this)">
+
+    <section>
+      <h2>Meet Your Planning Committee</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09-2/planning-committee.jpg" alt="The ARYCT planning committee" onclick="openLightbox(this)">
+      <p>From left to right: Marilynne Leach, Ivana Todd (co-chair), Kelly Pickard-Lefterys, Melanie Fintelman, Sharon Gusz (co-chair), and Anna Santarossa (founding chair).</p>
+      <img class="photo-single" src="../images/newsletters/2026-09-2/september-to-remember.jpg" alt="Illustration: Make it a September to remember" onclick="openLightbox(this)" style="max-width: 260px;">
+      <p><strong>We have a new website!</strong> Check us out at <a href="https://retiredteachersaryct.github.io" target="_blank" rel="noopener">retiredteachersaryct.github.io</a>. Sincere attempts are being made to post all monthly Mailchimp messages and to add occasional photos.</p>
+    </section>
+
+    <section>
+      <h2>YCDSB Alumni Announcements Reminder</h2>
+      <p>If you are interested in accessing the YCDSB Birth, Retirement and Bereavement Notices, click the following link:</p>
+      <p><a href="https://sites.google.com/ycdsbk12.ca/ycdsbalumni" target="_blank" rel="noopener">sites.google.com/ycdsbk12.ca/ycdsbalumni &rarr;</a></p>
+      <p>You will be asked to register on your first visit to this site.</p>
+    </section>
+
+    <section>
+      <h2>September's Main Event: Time to RSVP</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09/crows-nest-pub.jpg" alt="The Crow's Nest Pub in Newmarket" onclick="openLightbox(this)">
+      <div class="photo-grid">
+        <img src="../images/newsletters/2026-09/crows-nest-interior.jpg" alt="The Crow's Nest upper room" onclick="openLightbox(this)">
+        <img src="../images/newsletters/2026-09/bingo-card.png" alt="Bingo card graphic" onclick="openLightbox(this)">
+      </div>
+      <p><strong>Lunch and Bingo<br>
+      Crow's Nest Upper Room<br>
+      115 Prospect St., Newmarket<br>
+      Monday, September 28 — noon onward</strong></p>
+      <p><strong>Cost: $30.00</strong> — includes food from preordered platters (sliders, flatbread, fruit, veggies), tea/coffee, and Bingo cards for several games. Guests will be required to order and pay for their own drinks.</p>
+      <p>Registration is limited to 50 guests. RSVP with an e-transfer to <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a>.</p>
+      <p><strong>RSVP deadline: September 18.</strong></p>
+      <p><strong>A special door prize raffle</strong> will be held for first-year retirees in attendance.</p>
+      <p><strong>Please note:</strong> the event is upstairs with no elevator access, sorry. Parking is limited — car pooling is strongly advised.</p>
+    </section>
+
+    <section>
+      <h2>Harbour of Hope — An East Coast Shindig for Mental Health</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09/harbour-of-hope.jpg" alt="Harbour of Hope East Coast Shindig poster" onclick="openLightbox(this)" style="max-width: 360px;">
+      <p><strong>Thursday, September 17, 2026, 7:00 – 10:00 p.m.</strong><br>
+      Northridge Community Church of The Salvation Army<br>
+      15338 Leslie Street, Aurora, ON</p>
+      <p>Live music, great food, on-the-wagon mocktails, a silent and live auction, and a fun East Coast atmosphere. Tickets are $50.00 per person.</p>
+      <p>Come join us for an evening of fun for a great cause. Register by calling <strong>905-895-6276</strong>, Monday to Friday from 9 a.m. to 3 p.m. Mention that you are an ARYCT member when you call for your ticket.</p>
+    </section>
+
+    <section>
+      <h2>OTIP/RTIP Insurance Options Explained — Lunch and Learn</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09-2/otip-lunch-and-learn.png" alt="OTIP RAEO logo" onclick="openLightbox(this)" style="max-width: 300px;">
+      <p><strong>Thursday, October 15, 2026, 12:00 – 2:00 p.m.<br>
+      York OECTA Unit Office, 180 Brodie Dr., Unit 4, Richmond Hill</strong></p>
+      <p>Join us for a Lunch and Learn session with Jessie from OTIP. Spouses are welcome, and lunch is provided by OTIP.</p>
+      <p>RSVP to <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a>.</p>
+    </section>
+
+    <section>
+      <h2>Indigenous Awareness — Part 2</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09/indigenous-awareness.jpg" alt="Indigenous Awareness session facilitator" onclick="openLightbox(this)" style="max-width: 240px;">
+      <p><strong>Lasky Hall, King City<br>
+      Wednesday, October 28 — 10:00 a.m. to 2:00 p.m.</strong></p>
+      <p>Facilitators: Mim Harder and Shannon Ulgiati. The morning session will concentrate on the "Blanket Exercise" as requested by last year's members, with the afternoon session offering reflection and discussion.</p>
+      <p>We would like to hear from those who plan on attending to get an idea of numbers. Official registrations with e-transfers will be accepted in October. You are most welcome to bring along friends outside of our YCDSB group. Lunch will also be included.</p>
+    </section>
+
+    <section>
+      <h2>From Your Former Colleagues</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09-2/day-of-action.jpg" alt="Province-wide Day of Action poster, Wednesday September 16" onclick="openLightbox(this)" style="max-width: 300px;">
+      <p>Please consider wearing <strong>red or purple on Wednesday, September 16</strong> for the province-wide Day of Action to defend publicly funded education. Our teachers and support workers need our support!</p>
+    </section>
+
+    <section>
+      <h2>From Mim Harder — Together for Nature</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09/together-for-nature.jpg" alt="Together for Nature tour poster featuring Susan Aglukark" onclick="openLightbox(this)" style="max-width: 360px;">
+      <p>Mim has asked us to share this notice with our friend groups.</p>
+      <p><strong>Together for Nature (Toronto)<br>
+      Wednesday, September 16 — 7:00 to 9:30 p.m.<br>
+      Knox Presbyterian Church, 630 Spadina Ave., Toronto</strong></p>
+      <p>Raising our voices for nature and all our relations through story and song. Tickets are $30.</p>
+      <p><a href="https://ontarionature.org/events/together-for-nature-tour/" target="_blank" rel="noopener">Event details &amp; tickets &rarr;</a></p>
+    </section>
+
+    <section>
+      <h2>From Rose of Sharon — First-Ever Online Auction</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09-2/rose-of-sharon.png" alt="Rose of Sharon — Services for Young Mothers" onclick="openLightbox(this)" style="max-width: 300px;">
+      <p>Rose of Sharon is hosting its first-ever online auction, running <strong>September 14 to 25</strong>. Whether you are looking for something special for yourself, a unique gift, or simply want to support Rose of Sharon, take a look and find something you love.</p>
+      <p>Email us for the auction link if you would like to take part.</p>
+    </section>
+
+    <section>
+      <h2>From CFUW Aurora/Newmarket — The Grad Burger</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09-2/cfuw-grad-burger.jpg" alt="Grad Burger at Ground Burger Bar, available September 1 to 30" onclick="openLightbox(this)" style="max-width: 320px;">
+      <p>Throughout <strong>September 1 to 30</strong>, every purchase of the Grad Burger at Ground Burger Bar supports CFUW's Charitable Trust scholarship program, helping young women in the community achieve their academic dreams.</p>
+    </section>
+
+    <section>
+      <h2>Milk Bag Weavers Are Moving to a New Day!</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/milk-bag-weavers-potluck.jpeg" alt="Milk Bag Weavers celebrating their annual June Pot Luck" onclick="openLightbox(this)">
+      <p>Due to ongoing construction at Our Lady Queen of the World church, we are moving our weaving day to Monday. This friendly group is ready to welcome new members. Fall dates are as follows:</p>
+      <ul class="dates-list">
+        <li><span class="date">Mon. Sept. 14</span><span>9:30 – 11:00</span></li>
+        <li><span class="date">Mon. Oct. 5</span><span>9:30 – 11:00</span></li>
+        <li><span class="date">Mon. Nov. 16</span><span>9:30 – 11:00 (moved due to parish craft show)</span></li>
+        <li><span class="date">Mon. Dec. 7</span><span>9:30 – 11:00</span></li>
+      </ul>
+      <p>Winter dates will be on "first" Monday afternoons.</p>
+    </section>
+
+    <section>
+      <h2>Rest in Peace</h2>
+      <img class="photo-single" src="../images/newsletters/2026-08/rest-in-peace.jpg" alt="Rest in Peace graphic" onclick="openLightbox(this)">
+
+      <div class="memorial-box">
+        <img src="../images/newsletters/2026-09-2/maria-di-giacomo-sloane.jpeg" alt="Maria Giovanna Di Giacomo-Sloane" onclick="openLightbox(this)">
+        <p class="name">Maria Giovanna Di Giacomo-Sloane</p>
+        <p class="dates">Passed away September 3, 2026</p>
+        <p>A long-time French teacher at Mother Teresa Catholic School in Milliken Mills.</p>
+        <p><a href="https://www.dignitymemorial.com/en-ca/obituaries/thornhill-on/maria-jovanna-di-giacomo-sloane-13026352" target="_blank" rel="noopener">Read the obituary &rarr;</a></p>
+      </div>
+
+      <div class="memorial-box">
+        <img src="../images/newsletters/2026-09-2/patricia-obrien-dunn.jpeg" alt="Patricia Anne O'Brien-Dunn" onclick="openLightbox(this)">
+        <p class="name">Patricia Anne O'Brien-Dunn</p>
+        <p class="dates">1948 — 2026 · Passed away September 5, 2026</p>
+        <p>Obituary at Dixon-Garland Funeral Home, Markham.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>A New Kind of Long Range Plans!</h2>
+      <ul class="dates-list">
+        <li><span class="date">Mon. Sept. 14</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Wed. Sept. 16</span><span>Together for Nature — Knox Church, Toronto</span></li>
+        <li><span class="date">Thurs. Sept. 17</span><span>Harbour of Hope East Coast Shindig — Northridge Community Church, Aurora</span></li>
+        <li><span class="date">Fri. Sept. 18</span><span>RSVP deadline for Lunch and Bingo</span></li>
+        <li><span class="date">Mon. Sept. 28</span><span>To Heck with the Bell Event... Lunch and Bingo at Crow's Nest, Newmarket</span></li>
+        <li><span class="date">Mon. Oct. 5</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Thurs. Oct. 15</span><span>Lunch and Presentation hosted by OTIP — OECTA York Unit Office</span></li>
+        <li><span class="date">Wed. Oct. 28</span><span>Indigenous Awareness, Blanket Exercise — Lasky Hall, King City</span></li>
+        <li><span class="date">Mon. Nov. 16</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Wed. Dec. 2</span><span>Christmas Fundraising Luncheon — Stonehaven, Newmarket</span></li>
+        <li><span class="date">Sun. Dec. 6</span><span>Creating a Christmas Centre Piece — Lasky Hall, King City</span></li>
+        <li><span class="date">Mon. Dec. 7</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Mon. Jan. 4</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Mon. Feb. 1</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Feb. TBD</span><span>Lunch at Mandarin, Vaughan</span></li>
+        <li><span class="date">Mon. Mar. 1</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Wed. Mar. 10</span><span>Irish Pub, Market Brewery, Newmarket</span></li>
+        <li><span class="date">Mon. Apr. 5</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Wed. Apr. 28</span><span>Days of Mourning Recognition</span></li>
+        <li><span class="date">Mon. May 3</span><span>Milk Bag Weaving; Jeans and Jewels Fundraiser</span></li>
+        <li><span class="date">Mon. June 7</span><span>Milk Bag Weaving and Pot Luck Lunch; OECTA Retirement &amp; 25 Year Celebration</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Good to Know: Why Privacy Awareness Matters More Than Ever</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09/privacy-awareness.jpg" alt="A person logging in on a phone next to a laptop" onclick="openLightbox(this)" style="max-width: 320px;">
+      <p>Our daily lives are becoming increasingly digital. Life has never been more convenient, yet our exposure to privacy risks has never been greater. Each new app, account, or connected device is another doorway where information can slip through the cracks or fall into the wrong hands. Privacy awareness is about knowing how your personal data is collected, where it lives, and what you can do to keep it safe.</p>
+      <p><a href="https://www.otip.com/why-otip/news/why-privacy-awareness-matters-more-than-ever" target="_blank" rel="noopener">Read more at OTIP &rarr;</a></p>
+    </section>
+
+    <p class="footer-note">
+      Visit us on Facebook — Active Retired York Catholic Teachers<br>
+      Instagram: aryct11<br>
+      Website: <a href="https://retiredteachersaryct.github.io" target="_blank" rel="noopener">retiredteachersaryct.github.io</a><br>
+      Email us at <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a>
+    </p>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(imgEl) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = imgEl.src;
+      lightboxImg.alt = imgEl.alt;
+      lightbox.classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
