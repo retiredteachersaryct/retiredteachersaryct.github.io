@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPMHLT1HVX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NPMHLT1HVX');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>October 2026 (No. 2) Newsletter — ARYCT</title>
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../images/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/favicon-16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #1c6e8c;
+      --olive: #808034;
+      --teal-light: #d3e9f0;
+      --white: #ffffff;
+      --text: #3a4a4f;
+      --accent-link: #B5533C;
+      --accent-warm: #8F6530;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--white);
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+    }
+
+    .top-bar {
+      background: var(--teal-light);
+      padding: 0.9rem 1.5rem;
+      text-align: center;
+    }
+
+    .top-bar a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 0.75rem;
+    }
+
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .newsletter {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .newsletter h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--teal);
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      text-align: center;
+      margin: 0 0 0.5rem;
+    }
+
+    .newsletter .subtitle {
+      text-align: center;
+      color: var(--accent-warm);
+      font-weight: 600;
+      margin: 0 0 2rem;
+    }
+
+    .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--teal);
+      font-size: 1.4rem;
+      margin: 0 0 0.75rem;
+      border-left: 5px solid var(--teal);
+      padding-left: 0.75rem;
+    }
+
+    .newsletter section {
+      margin-bottom: 2.25rem;
+    }
+
+    .newsletter ol {
+      line-height: 1.7;
+      margin: 0 0 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .newsletter ul.bullets {
+      line-height: 1.7;
+      margin: 0 0 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .newsletter p {
+      line-height: 1.7;
+      margin: 0 0 1rem;
+    }
+
+    .newsletter img {
+      max-width: 100%;
+      border-radius: 10px;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .photo-single {
+      margin: 0 0 1rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 0 0 1rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .newsletter a {
+      color: var(--accent-link);
+      font-weight: 600;
+    }
+
+    .dates-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .dates-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--teal-light);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .dates-list li:last-child {
+      border-bottom: none;
+    }
+
+    .dates-list .date {
+      font-weight: 700;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+
+    .highlight-box {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .memorial-box {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      margin-bottom: 1.25rem;
+    }
+
+    .memorial-box:last-child {
+      margin-bottom: 0;
+    }
+
+    .memorial-box .name {
+      font-family: 'Playfair Display', serif;
+      color: var(--teal);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem;
+    }
+
+    .memorial-box .dates {
+      color: var(--accent-warm);
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+    }
+
+    .memorial-box img {
+      max-width: 160px;
+      margin: 0 0 1rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--accent-warm);
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      cursor: default;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1.75rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="../index.html">&larr; Home</a>
+    <a href="index.html">All Newsletters</a>
+  </div>
+
+
+  <div class="newsletter">
+    <h1>ARYCT Newsletter — October 2026 (No. 2)</h1>
+    <p class="subtitle">Indigenous Awareness</p>
+
+    <img class="photo-single" src="../images/newsletters/2026-09/masthead.jpg" alt="Active Retired York Catholic Teachers banner" onclick="openLightbox(this)">
+    <img class="photo-single" src="../images/newsletters/2026-10-2/autumn.png" alt="Illustration: Autumn shows us how beautiful it is to let go of things" onclick="openLightbox(this)" style="max-width: 260px;">
+
+    <section>
+      <h2>Thank You — OTIP Lunch and Learn</h2>
+      <img class="photo-single" src="../images/newsletters/2026-10-2/otip-raeo-logo.png" alt="OTIP RAEO logo" onclick="openLightbox(this)" style="max-width: 160px;">
+      <p>Many thanks to Jesse Brideau and OTIP for the informative Lunch and Learn session on October 15th.</p>
+      <p>2027 Health Plans renewal reminders should be arriving soon with options to change levels. RTIP members have access to:</p>
+      <ul class="bullets">
+        <li>Travel insurance, with up to $10 million in emergency medical coverage per person</li>
+        <li>Express Scripts Canada Pharmacy, with up to 100% coverage for eligible generic maintenance medications, home delivery, and a 90-day supply for one dispensing fee</li>
+        <li>Carepath Cancer Care and Elder Care support, Starling Minds mental health resources, and exclusive savings through EdvantagePerks</li>
+      </ul>
+      <p><strong>Auto and Home Insurance</strong> — If your plan is up for renewal, give them a call. You may qualify for retirement and multi-policy discounts.</p>
+      <p><strong>"Curo Claims"</strong> handles Auto and House claims, including 24/7 emergency claims support.</p>
+      <p>For more information, visit <a href="https://www.otip.com" target="_blank" rel="noopener">www.otip.com</a> or call <a href="tel:+18002676847">1-800-267-6847</a>.</p>
+    </section>
+
+    <section>
+      <h2>Educators Financial Group</h2>
+      <img class="photo-single" src="../images/newsletters/2026-10-2/educators-financial-group.jpg" alt="Educators Financial Group, 50 years" onclick="openLightbox(this)" style="max-width: 300px;">
+      <p>Alana Gould from Educators Financial Group also spoke at our gathering on October 15th. She reminded attendees that EFG does not work on commission and does not charge fees for consultations. Their focus is for you as a client to be educated and informed.</p>
+      <p>Financial specialists are available to meet with you via Zoom, in your home, or in their office. In addition to assisting you with your financial portfolio, they can advise on tax implications of various transactions and implications of your portfolio being passed onto a beneficiary. They will also assist those that are acting as executor for others.</p>
+      <p><a href="https://bit.ly/4ySsArg" target="_blank" rel="noopener">Speak to one of their specialists &rarr;</a></p>
+    </section>
+
+    <section>
+      <h2>Together for Publicly Funded Education Rallies</h2>
+      <img class="photo-single" src="../images/newsletters/2026-10-2/rallies-save-the-date.jpg" alt="Save the date: Rallies for Publicly Funded Education, Saturday October 24, 2026 at 1 p.m." onclick="openLightbox(this)" style="max-width: 320px;">
+      <p>On <strong>Saturday, October 24</strong>, teachers and education workers from across Ontario will come together for five regional Together for Publicly Funded Education rallies. The Toronto Rally will be at Queen's Park.</p>
+      <p>Every Catholic teacher is strongly encouraged to make plans to attend the rally closest to them. Please also encourage a colleague from work, as well as your family, friends, neighbours, and other supporters of publicly funded education, to do the same.</p>
+    </section>
+
+    <section>
+      <h2>Vote on Mon. Oct. 26th (or Before)</h2>
+      <img class="photo-single" src="../images/newsletters/2026-10-2/vote.jpg" alt="A hand placing a ballot in a box marked Vote" onclick="openLightbox(this)" style="max-width: 280px;">
+      <p>Take time to be informed and by all means vote! Do not forget to vote for your Catholic School Trustee. You may see one of our own members listed within the candidates.</p>
+    </section>
+
+    <section>
+      <h2>Indigenous Awareness</h2>
+      <img class="photo-single" src="../images/newsletters/2026-09/indigenous-awareness.jpg" alt="Indigenous Awareness session facilitator" onclick="openLightbox(this)" style="max-width: 240px;">
+      <p><strong>Lasky Hall, King City<br>
+      Wednesday, October 28 — 10:00 a.m. to 2:00 p.m.</strong></p>
+      <p><strong>Facilitators:</strong> Mim Harder and Shannon Ulgiati<br>
+      <strong>Cost:</strong> $40.00</p>
+      <p>The morning session will concentrate on the "Blanket Exercise" as requested by last year's members, with the afternoon session offering reflection and discussion. Lunch is included.</p>
+      <p>Register by sending your e-transfer to <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a>. You are most welcome to bring along friends outside of our YCDSB group.</p>
+      <img class="photo-single" src="../images/newsletters/2026-08/cycle-of-care.png" alt="The Cycle of Care donation graphic" onclick="openLightbox(this)" style="max-width: 320px;">
+      <p>On October 28, Gina Creta from The Cycle of Care will be present to collect donations of feminine hygiene products that will be distributed via Moontime Connections. An extra door prize ticket will be offered to anyone who makes a donation.</p>
+    </section>
+
+    <section>
+      <h2>Our Annual Christmas Fundraiser</h2>
+      <img class="photo-single" src="../images/newsletters/2026-10-2/save-the-date.jpg" alt="Save the Date" onclick="openLightbox(this)" style="max-width: 200px;">
+      <p><strong>Wednesday, December 2nd<br>
+      Stonehaven Banquet Hall, Newmarket</strong></p>
+      <p>RSVPs will be accepted starting November 1st. Details to follow.</p>
+    </section>
+
+    <section>
+      <h2>Your Late October Check List</h2>
+      <img class="photo-single" src="../images/newsletters/2026-10-2/to-do.png" alt="To do list illustration" onclick="openLightbox(this)" style="max-width: 180px;">
+      <ol>
+        <li>Start connecting with friends to create a table of 8 for our Christmas fundraiser lunch. Registration starts November 1.</li>
+        <li>Vote on or before October 26.</li>
+        <li>Get your flu shot.</li>
+        <li>Get your winter COVID vaccine.</li>
+        <li>Book your winter tire appointment.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Other Items That May Interest You</h2>
+      <img class="photo-single" src="../images/newsletters/2026-10-2/what-is-in-the-air.png" alt="Webinar poster: What is in the air we breathe? October 21st at 12 pm ET" onclick="openLightbox(this)" style="max-width: 350px;">
+      <p>For the past 27 years, the American Lung Association (ALA) has released an annual "State of Our Air" report. The 2026 report found that nearly half of children in the U.S. live in places with unhealthy levels of air pollution. How does unhealthy air quality impact our children and the most vulnerable in our nation? How should we as people of faith respond? How different are things in Canada?</p>
+      <p>The webinar (October 21 at 12 pm ET) will be recorded and the recording shared with all who register. <a href="https://bit.ly/WhatIsInTheAir" target="_blank" rel="noopener">Register here &rarr;</a></p>
+    </section>
+
+    <section>
+      <h2>Milk Bag Weavers</h2>
+      <img class="photo-single" src="../images/newsletters/2026-10-2/milk-bag-mats.jpeg" alt="A stack of woven milk bag mats" onclick="openLightbox(this)">
+      <p><strong>Our Lady Queen of the World Church Basement</strong></p>
+      <p>Fall dates are as follows:</p>
+      <ul class="dates-list">
+        <li><span class="date">Mon. Nov. 16</span><span>9:30 – 11:00 (moved due to parish craft show)</span></li>
+        <li><span class="date">Mon. Dec. 7</span><span>9:30 – 11:00</span></li>
+      </ul>
+      <p>Winter dates will be on "first" Monday afternoons.</p>
+    </section>
+
+    <section>
+      <h2>A New Kind of Long Range Plans!</h2>
+      <ul class="dates-list">
+        <li><span class="date">Wed. Oct. 28</span><span>Indigenous Awareness, Blanket Exercise — Lasky Hall, King City</span></li>
+        <li><span class="date">Mon. Nov. 16</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Wed. Dec. 2</span><span>Christmas Fundraising Luncheon — Stonehaven Banquet Hall, Newmarket</span></li>
+        <li><span class="date">Sun. Dec. 6</span><span>Creating a Christmas Centre Piece — Lasky Hall, King City</span></li>
+        <li><span class="date">Mon. Dec. 7</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Mon. Jan. 4</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Mon. Feb. 1</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Feb. TBD</span><span>Lunch at Mandarin, Vaughan</span></li>
+        <li><span class="date">Mon. Mar. 1</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Wed. Mar. 10</span><span>Irish Pub, Market Brewery, Newmarket</span></li>
+        <li><span class="date">Mon. Apr. 5</span><span>Milk Bag Weaving</span></li>
+        <li><span class="date">Wed. Apr. 28</span><span>Days of Mourning Recognition</span></li>
+        <li><span class="date">Mon. May 3</span><span>Milk Bag Weaving; Jeans and Jewels Fundraiser</span></li>
+        <li><span class="date">Mon. June 7</span><span>Milk Bag Weaving and Pot Luck Lunch; OECTA Retirement &amp; 25 Year Celebration</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Good to Know: OTIP Vacation Contest</h2>
+      <img class="photo-single" src="../images/newsletters/2026-10-2/otip-contest.png" alt="OTIP RAEO contest: a woman relaxing at a resort pool" onclick="openLightbox(this)" style="max-width: 360px;">
+      <p>Dream big, win bigger! Enter OTIP's contest to win $10,000 to enjoy a perfect vacation.</p>
+      <p><a href="https://bit.ly/4xSHQmC" target="_blank" rel="noopener">Enter now &rarr;</a></p>
+    </section>
+
+    <p class="footer-note">
+      Visit us on Facebook — Active Retired York Catholic Teachers<br>
+      Instagram: aryct11<br>
+      Website: <a href="https://retiredteachersaryct.github.io" target="_blank" rel="noopener">retiredteachersaryct.github.io</a><br>
+      Email us at <a href="mailto:retiredteachersaryct@gmail.com">retiredteachersaryct@gmail.com</a>
+    </p>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(imgEl) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = imgEl.src;
+      lightboxImg.alt = imgEl.alt;
+      lightbox.classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
